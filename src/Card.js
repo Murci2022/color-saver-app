@@ -38,6 +38,8 @@ export default function Card() {
           ]);
         }}
       >
+        {" "}
+        <input type="color"></input>
         <input type="text" placeholder="#ffffff" name="colorCode"></input>
         <button type="submit">submit</button>
       </form>
@@ -49,6 +51,9 @@ export default function Card() {
               <div
                 className="Card"
                 style={{ border: "5px solid " + color.hexCode }}
+                onClick={() => {
+                  navigator.clipboard.writeText(color.hexCode);
+                }}
               >
                 {color.hexCode} is this color: {color.color}
               </div>
